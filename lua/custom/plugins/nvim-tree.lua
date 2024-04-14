@@ -7,7 +7,16 @@ return {
     'MunifTanjim/nui.nvim',
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
-  config = function()
-    vim.keymap.set('n', '<leader>e', '<CMD>Neotree toggle<CR>', { desc = 'Open Explorer' })
-  end,
+  keys = {
+    { '<leader>e', '<cmd>Neotree toggle<cr>', desc = 'NeoTree' },
+  },
+  opts = {
+    filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignored = false,
+        hide_hidden = false,
+      },
+    },
+  },
 }
